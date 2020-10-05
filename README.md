@@ -15,7 +15,7 @@ allprojects {
 2. Add the dependency to your app's build.gradle file
 ```gradle
 dependencies {
-    implementation 'com.github.evilthreads669966:jackhammer:0.1'
+    implementation 'com.github.evilthreads669966:jackhammer:0.2'
 }
 ```
 3. Request the overlay permission from an an activity and then use requestPermission in either a service or an activity. 
