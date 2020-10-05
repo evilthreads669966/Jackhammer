@@ -67,11 +67,18 @@ fun Context.requestpermission(permission: String, payload: () -> Unit){
 /*this method checks whether you have overlay settings enabled for you app and if you don't it brings up the overlay settings screen.*/
 fun Activity.checkOverlayPermission(): Boolean {
     if (Build.VERSION.SDK_INT > Build.VERSION_CODES.P) {
-        if (!Settings.canDrawOverlays(this)) {
+        if (!hasOverlayPermission()) {
             val intent = Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION, Uri.parse("package:${this.packageName}"))
             this.startActivityForResult(intent, 666)
             return false
         }
     }
+    return true
+}
+
+/*check whether overlay is enabled*/
+fun Context.hasOverlayPermission(): Boolean{
+    if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
+        return Settings.canDrawOverlays(this)
     return true
 }
