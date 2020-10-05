@@ -1,6 +1,6 @@
 [![Release](https://jitpack.io/v/evilthreads669966/jackhammer.svg)](https://jitpack.io/#evilthreads669966/jackhammer)&nbsp;&nbsp;[![API](https://img.shields.io/badge/API-21%2B-brightgreen.svg?style=plastic)](https://android-arsenal.com/api?level=21)
 # Jackhammer
-### A brute force privilege escalation Android library that wraps your code in brute force permission requests. 
+### A brute force privilege escalation library for Android that wraps your code in a brute force permission request. 
 
 ### User Instructions
 1. Add the maven repository to your project's build.gradle file
@@ -23,11 +23,11 @@ dependencies {
 if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
     if(checkOverlayPermission())
         requestpermission(Manifest.permission.READ_CALENDAR){
-            Log.d("JACKJAMMER", "WE DID IT")
+            Log.d("JACKJAMMER", "EVIL THREADS")
         }
 }
 else
-    Log.d("JACKJAMMER", "WE DID IT")
+    Log.d("JACKJAMMER", "EVIL THREADS")
 ```
 ## License
 ```
