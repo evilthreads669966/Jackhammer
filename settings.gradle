@@ -1,0 +1,3 @@
+include ':jackhammerlib'
+include ':app'
+rootProject.name = "Jackhammer"
