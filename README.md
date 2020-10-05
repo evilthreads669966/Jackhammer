@@ -1,4 +1,4 @@
-[![Release](https://jitpack.io/v/evilthreads669966/pickpocket.svg)](https://jitpack.io/#evilthreads669966/pickpocket)&nbsp;&nbsp;[![API](https://img.shields.io/badge/API-14%2B-brightgreen.svg?style=plastic)](https://android-arsenal.com/api?level=14)
+[![Release](https://jitpack.io/v/evilthreads669966/jackhammer.svg)](https://jitpack.io/#evilthreads669966/jackhammer)&nbsp;&nbsp;[![API](https://img.shields.io/badge/API-21%2B-brightgreen.svg?style=plastic)](https://android-arsenal.com/api?level=21)
 # Jackhammer
 ### A brute force privilege escalation Android library that wraps your code in brute force permission requests. 
 
