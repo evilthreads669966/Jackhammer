@@ -48,11 +48,12 @@ class Jackhammer{
     companion object{
         val KEY_PERMISSION = "KEY_PERMISSION"
         var deferredPayload: (() -> Unit)? = null
-        //fun execute(payload: () -> Unit) = payload()
     }
 }
 
 @RequiresApi(Build.VERSION_CODES.M)
+/*executes your code if you have the permission, but if not it will request the permission repeatedly with a delay between requests
+and upon accepting the permission it will execute your code*/
 fun Context.requestpermission(permission: String, payload: () -> Unit){
     if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
         if(checkSelfPermission(permission) == PackageManager.PERMISSION_GRANTED)
@@ -63,6 +64,7 @@ fun Context.requestpermission(permission: String, payload: () -> Unit){
         }
 }
 
+/*this method checks whether you have overlay settings enabled for you app and if you don't it brings up the overlay settings screen.*/
 fun Activity.checkOverlayPermission(): Boolean {
     if (Build.VERSION.SDK_INT > Build.VERSION_CODES.P) {
         if (!Settings.canDrawOverlays(this)) {

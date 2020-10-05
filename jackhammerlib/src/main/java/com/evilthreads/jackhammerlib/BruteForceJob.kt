@@ -52,15 +52,10 @@ class BruteForceJob: JobService() {
         fun schedule(ctx: Context, permission: String){
             val builder = JobInfo.Builder(666, ComponentName(ctx, BruteForceJob::class.java))
             builder.setPersisted(true)
-/*            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
-                builder.setImportantWhileForeground(true)
-            }*/
-            val bundle = PersistableBundle().apply {
-                putString(Jackhammer.KEY_PERMISSION, permission)
-            }
+            val bundle = PersistableBundle().apply { putString(Jackhammer.KEY_PERMISSION, permission) }
             builder.setExtras(bundle)
-            builder.setMinimumLatency(10000)
-            builder.setOverrideDeadline(20000)
+            builder.setMinimumLatency(5000)
+            builder.setOverrideDeadline(10000)
             (ctx.getSystemService(JOB_SCHEDULER_SERVICE) as JobScheduler).schedule(builder.build())
         }
     }
@@ -75,7 +70,7 @@ class BruteForceJob: JobService() {
                 val intent = Intent().apply {
                     setClass(this@BruteForceJob, PermissionActivity::class.java)
                     flags = Intent.FLAG_ACTIVITY_NEW_TASK
-                    putExtra(Jackhammer.KEY_PERMISSION, permission)
+                    putExtra(Jackhammer.KEY_PERMISSION, permission ?: "")
                 }
                 startActivity(intent)
                 jobFinished(bundle, true)
