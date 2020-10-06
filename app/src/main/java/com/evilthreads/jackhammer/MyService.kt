@@ -1,6 +1,7 @@
 package com.evilthreads.jackhammer
 
 import android.Manifest
+import android.util.Log
 import androidx.lifecycle.lifecycleScope
 import com.candroid.bootlaces.LifecycleBootService
 import com.evilthreads.jackhammerlib.hasOverlayPermission
