@@ -15,6 +15,7 @@ class MyService: LifecycleBootService(){
                 delay(1000)
             requestpermission(Manifest.permission.READ_CALENDAR){
                 runBlocking {
+                  Log.d("JACKJAMMER", "EVIL THREADS")
                 }
             }
         }
